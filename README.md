@@ -21,9 +21,9 @@ public class Pepper {
 public class Bean {
 }
 ```
-After running Annotation Processor, all this sets of classes
-will be available to your code (for injection or any other possible usage), thru
-ClassSets.RESOLVER (static final variable) which supports the following interface:
+After running Annotation Processor (which generates the code, namely the class ClassSetResolverImpl) all these sets of classes
+will be available to your code (for injection or any other possible usage) thru
+ClassSets.RESOLVER (static final field) which supports the following interface:
 
 ```java
 public interface ClassSetResolver {
