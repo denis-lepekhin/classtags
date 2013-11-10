@@ -1,7 +1,7 @@
 classtags
 =========
 
-Java annotation processor, generating class sets based on class tagging;
+Java annotation processor, that generates class sets based on class tagging;
 ------------------------------------------------------------------------
 
 
@@ -23,13 +23,13 @@ public class Bean {
 ```
 After running Annotation Processor, all this sets of classes
 will be available to your code (for injection or any other possible usage), thru
-ClassSets.RESOLVER (static final variable) wicth supports the following interface:
+ClassSets.RESOLVER (static final variable) which supports the following interface:
 
 ```java
 public interface ClassSetResolver {
       Set<Class<?>> getClassesByTag(String tag);
     
-       // the result is intersection of tag sets;
+       // the result is an intersection of tag sets;
        // note that it's actually a guava SetView;
       Set<Class<?>> getClassesByTags(Iterable<String> tags);
 }
