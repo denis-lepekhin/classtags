@@ -1,0 +1,22 @@
+
+// declaring classTags task between generateProtobuf and compileJava;
+
+
+sourceSets {
+    generated
+}
+
+sourceSets.generated.java.srcDirs = ["${project.buildDir}/generated-sources/main"]
+
+task classTags(type: JavaCompile, group: 'build', description: 'Generates ClassSets using ClassTags') {
+        source = sourceSets.main.java
+        classpath = configurations.compile
+        dependencyCacheDir=file("${project.buildDir}/dependency-cache")
+        options.compilerArgs = [
+               "-proc:only",
+               "-processor", "pectin.classtags.AnnotationProcessor"
+        ]
+        destinationDir = sourceSets.generated.java.srcDirs.iterator().next()
+}
+classTags.dependsOn tasks.generateProto
+compileJava.dependsOn classTags
