@@ -35,6 +35,18 @@ public interface ClassSetResolver {
 }
 ```
 
+To improve type-safety (by compile-time type checking) it's possible
+to specify upper type bound for some tag. 
+
+```java
+@ClassTagSpec("dao")
+public interface DaoBaseClass {
+//You get compile-time error if any class tagged with "dao"
+//doesn't implement this interface;
+	
+}
+
+```
 
 
 
