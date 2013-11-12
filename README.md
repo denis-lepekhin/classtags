@@ -40,7 +40,7 @@ to specify upper type bound for some tag.
 
 ```java
 @ClassTagSpec("dao")
-public interface DaoBaseClass {
+public interface DaoBase {
 //You get compile-time error if any class tagged with "dao"
 //doesn't implement this interface;
 	
