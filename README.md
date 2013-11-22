@@ -1,4 +1,4 @@
-classtags
+ClassTags (Java Annotation Processor)
 =========
 
 Java annotation processor, that generates class sets based on class tagging;
